@@ -2,7 +2,7 @@ import React from "react";
 
 const ContentPane: React.FC = () => {
   return (
-    <main className="lg:ml-[40%] w-full lg:w-3/5 min-h-screen min-w-[300px] max-w-[1200px] mx-auto p-8 lg:p-12 lg:pr-[10%]">
+    <main className="lg:ml-[40%] w-full lg:w-3/5 lg:min-h-[90vh] min-w-[300px] max-w-[1200px] mx-auto p-8 lg:p-12 lg:pr-[10%]">
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-3">About Me</h2>
         <p className="text-base text-gray-700 leading-relaxed">
