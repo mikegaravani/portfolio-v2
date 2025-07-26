@@ -11,13 +11,15 @@ import NodejsIcon from "../assets/icons/nodejs.svg";
 import UniboIcon from "../assets/icons/unibo.svg";
 import Lilu2Icon from "../assets/icons/lilu2.png";
 import PvmIcon from "../assets/icons/pvm.png";
+import MongodbIcon from "../assets/icons/mongodb.svg"; // Assuming you have a MongoDB icon
 
 const ContentPane: React.FC = () => {
   return (
-    <main className="lg:ml-[40%] w-full lg:w-3/5 lg:min-h-[90vh] min-w-[300px] max-w-[1200px] mx-auto p-4 lg:p-12 lg:pt-4 lg:pr-[5%]">
+    <main className="lg:ml-[40%] w-full lg:w-3/5 lg:min-h-[90vh] min-w-[300px] mt-5 lg:mt-0 max-w-[1200px] mx-auto p-4 lg:p-12 lg:pt-4 lg:pr-[5%]">
       {/* ABOUT ME SECTION */}
-      <section className="mb-8">
-        <h2 className="text-2xl lg:text-3xl font-semibold mb-2">About Me</h2>
+      <section className="mb-12">
+        <h2 className="text-3xl lg:text-4xl font-semibold mb-4">About Me</h2>
+
         <p className="text-base text-gray-300 leading-relaxed mb-3">
           I'm a Swiss computer science student currently finishing my Bachelor's
           degree and excited to enter the job market.
@@ -36,8 +38,8 @@ const ContentPane: React.FC = () => {
       </section>
 
       {/* SKILLS SECTION */}
-      <section>
-        <h2 className="text-2xl lg:text-3xl font-semibold mb-2">Skills</h2>
+      <section className="mb-12">
+        <h2 className="text-3xl lg:text-4xl font-semibold mb-5">Skills</h2>
 
         <div className="mb-8">
           <div className="flex flex-wrap mt-4 gap-6">
@@ -83,7 +85,8 @@ const ContentPane: React.FC = () => {
 
       {/* EDUCATION SECTION */}
       <section>
-        <h2 className="text-2xl lg:text-3xl font-semibold mb-2">Education</h2>
+        <h2 className="text-3xl lg:text-4xl font-semibold mb-5">Education</h2>
+
         <ul className="list-none space-y-6 pl-0">
           <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-600">
             <div className="flex items-center mb-2">
@@ -211,6 +214,207 @@ const ContentPane: React.FC = () => {
             </ul>
           </div>
         </details>
+      </section>
+
+      {/* PROJECTS SECTION */}
+      <section className="mt-12">
+        <h2 className="text-3xl lg:text-4xl font-semibold mb-5">Projects</h2>
+
+        <ul className="list-none space-y-8 pl-0">
+          {/* PROJECT 1 */}
+          <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-600">
+            <div className="mb-4">
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-100 mb-3">
+                mCal - Full Stack Productivity
+              </h3>
+              <div className="text-base text-gray-300 leading-relaxed mb-4 space-y-2">
+                <p>
+                  • Built a comprehensive task management application with
+                  advanced event scheduling
+                </p>
+                <p>
+                  • Implemented secure user authentication and admin features
+                </p>
+                <p>
+                  • Designed RESTful APIs with proper error handling and input
+                  validation
+                </p>
+                <p>
+                  • Created responsive UI components with smooth animations and
+                  transitions
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-3 mb-4">
+                <div className="flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-full text-sm">
+                  <img src={ReactIcon} alt="React" className="w-4 h-4" />
+                  React
+                </div>
+                <div className="flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-full text-sm">
+                  <img
+                    src={TypeScriptIcon}
+                    alt="TypeScript"
+                    className="w-4 h-4"
+                  />
+                  TypeScript
+                </div>
+                <div className="flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-full text-sm">
+                  <div className="bg-white rounded-full p-1 flex items-center justify-center">
+                    <img src={NodejsIcon} alt="Node.js" className="w-4 h-4" />
+                  </div>
+                  Node.js
+                </div>
+                <div className="flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-full text-sm">
+                  <img src={MongodbIcon} alt="Mongodb" className="w-4 h-4" />
+                  Mongodb
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <a
+                  href="https://github.com/mikegaravani/mCal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg text-sm text-gray-200 transition-colors duration-200"
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg>
+                  View Code
+                </a>
+                <a
+                  href="https://site242535.tw.cs.unibo.it/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm text-white transition-colors duration-200"
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </li>
+
+          {/* PROJECT 2 */}
+          <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-600">
+            <div className="mb-4">
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-100 mb-3">
+                Connect X AI
+              </h3>
+              <div className="text-base text-gray-300 leading-relaxed mb-4 space-y-2">
+                <p>
+                  • Developed an algorithm able to play the best move in a game
+                  of Connect X (Connect Four with variable board size and win
+                  condition)
+                </p>
+                <p>• Implemented principles of game theory</p>
+                <p>• Found clever optimizations to reduce the search time</p>
+              </div>
+
+              <div className="flex flex-wrap gap-3 mb-4">
+                <div className="flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-full text-sm">
+                  <img src={JavaIcon} alt="Java" className="w-4 h-4" />
+                  Java
+                </div>
+                <div className="bg-gray-800 px-3 py-1 rounded-full text-sm text-gray-300">
+                  Object Oriented Programming
+                </div>
+                <div className="bg-gray-800 px-3 py-1 rounded-full text-sm text-gray-300">
+                  Game Theory
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <a
+                  href="https://github.com/mikegaravani/connect-X-project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg text-sm text-gray-200 transition-colors duration-200"
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg>
+                  View Code
+                </a>
+              </div>
+            </div>
+          </li>
+
+          {/* PROJECT 3 */}
+          <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-600">
+            <div className="mb-4">
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-100 mb-3">
+                Risk - Dice Roll Odds
+              </h3>
+              <div className="text-base text-gray-300 leading-relaxed mb-4 space-y-2">
+                <p>
+                  • Created an algorithm to calculate the odds of winning an
+                  attack in the game Risk
+                </p>
+                <p>
+                  • Implemented mathematical calculations to predict outcomes
+                  and their likelihoods
+                </p>
+                <p>
+                  • Built a simple UI to calculate the desired configuration and
+                  visualize the results
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-3 mb-4">
+                <div className="flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-full text-sm">
+                  <img
+                    src={JavaScriptIcon}
+                    alt="JavaScript"
+                    className="w-4 h-4"
+                  />
+                  JavaScript
+                </div>
+                <div className="bg-gray-800 px-3 py-1 rounded-full text-sm text-gray-300">
+                  Probability
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <a
+                  href="https://github.com/mikegaravani/risk-odds"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg text-sm text-gray-200 transition-colors duration-200"
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg>
+                  View Code
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
       </section>
     </main>
   );
