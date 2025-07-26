@@ -1,5 +1,4 @@
-import React from "react";
-// Import SVG icons
+import React, { useState } from "react";
 import JavaScriptIcon from "../assets/icons/javascript.svg";
 import TypeScriptIcon from "../assets/icons/typescript.svg";
 import CIcon from "../assets/icons/c.svg";
@@ -13,7 +12,144 @@ import Lilu2Icon from "../assets/icons/lilu2.png";
 import PvmIcon from "../assets/icons/pvm.png";
 import MongodbIcon from "../assets/icons/mongodb.svg"; // Assuming you have a MongoDB icon
 
+interface Skill {
+  id: string;
+  name: string;
+  icon: string;
+  hoverColors: {
+    background: string;
+    border: string;
+    text: string;
+  };
+}
+
 const ContentPane: React.FC = () => {
+  const [skills, setSkills] = useState<Skill[]>([
+    {
+      id: "javascript",
+      name: "JavaScript",
+      icon: JavaScriptIcon,
+      hoverColors: {
+        background: "hover:from-yellow-500/20 hover:to-yellow-600/20",
+        border: "hover:border-yellow-500/50",
+        text: "group-hover:text-yellow-300",
+      },
+    },
+    {
+      id: "typescript",
+      name: "TypeScript",
+      icon: TypeScriptIcon,
+      hoverColors: {
+        background: "hover:from-blue-500/20 hover:to-blue-600/20",
+        border: "hover:border-blue-500/50",
+        text: "group-hover:text-blue-300",
+      },
+    },
+    {
+      id: "c",
+      name: "C",
+      icon: CIcon,
+      hoverColors: {
+        background: "hover:from-blue-500/20 hover:to-blue-600/20",
+        border: "hover:border-blue-500/50",
+        text: "group-hover:text-blue-300",
+      },
+    },
+    {
+      id: "cpp",
+      name: "C++",
+      icon: CppIcon,
+      hoverColors: {
+        background: "hover:from-blue-500/20 hover:to-blue-600/20",
+        border: "hover:border-blue-500/50",
+        text: "group-hover:text-blue-300",
+      },
+    },
+    {
+      id: "python",
+      name: "Python",
+      icon: PythonIcon,
+      hoverColors: {
+        background: "hover:from-yellow-500/20 hover:to-yellow-600/20",
+        border: "hover:border-yellow-500/50",
+        text: "group-hover:text-yellow-300",
+      },
+    },
+    {
+      id: "java",
+      name: "Java",
+      icon: JavaIcon,
+      hoverColors: {
+        background: "hover:from-orange-500/20 hover:to-orange-600/20",
+        border: "hover:border-orange-500/50",
+        text: "group-hover:text-orange-300",
+      },
+    },
+    {
+      id: "react",
+      name: "React",
+      icon: ReactIcon,
+      hoverColors: {
+        background: "hover:from-cyan-500/20 hover:to-cyan-600/20",
+        border: "hover:border-cyan-500/50",
+        text: "group-hover:text-cyan-300",
+      },
+    },
+    {
+      id: "nodejs",
+      name: "Node.js",
+      icon: NodejsIcon,
+      hoverColors: {
+        background: "hover:from-green-500/20 hover:to-green-600/20",
+        border: "hover:border-green-500/50",
+        text: "group-hover:text-green-300",
+      },
+    },
+  ]);
+
+  const [draggedItem, setDraggedItem] = useState<string | null>(null);
+  const [dragOverItem, setDragOverItem] = useState<string | null>(null);
+
+  const handleDragStart = (e: React.DragEvent, skillId: string) => {
+    setDraggedItem(skillId);
+    e.dataTransfer.effectAllowed = "move";
+  };
+
+  const handleDragOver = (e: React.DragEvent, skillId: string) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "move";
+    setDragOverItem(skillId);
+  };
+
+  const handleDragLeave = () => {
+    setDragOverItem(null);
+  };
+
+  const handleDrop = (e: React.DragEvent, dropTargetId: string) => {
+    e.preventDefault();
+
+    if (!draggedItem || draggedItem === dropTargetId) {
+      setDraggedItem(null);
+      setDragOverItem(null);
+      return;
+    }
+
+    const draggedIndex = skills.findIndex((skill) => skill.id === draggedItem);
+    const targetIndex = skills.findIndex((skill) => skill.id === dropTargetId);
+
+    const newSkills = [...skills];
+    const [draggedSkill] = newSkills.splice(draggedIndex, 1);
+    newSkills.splice(targetIndex, 0, draggedSkill);
+
+    setSkills(newSkills);
+    setDraggedItem(null);
+    setDragOverItem(null);
+  };
+
+  const handleDragEnd = () => {
+    setDraggedItem(null);
+    setDragOverItem(null);
+  };
   return (
     <main className="lg:ml-[40%] w-full lg:w-3/5 lg:min-h-[90vh] min-w-[300px] mt-5 lg:mt-0 max-w-[1200px] mx-auto p-4 lg:p-12 lg:pt-4 lg:pr-[5%]">
       {/* ABOUT ME SECTION */}
@@ -42,78 +178,41 @@ const ContentPane: React.FC = () => {
         <h2 className="text-3xl lg:text-4xl font-semibold mb-8">Skills</h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 hover:from-yellow-500/20 hover:to-yellow-600/20 border border-gray-700 hover:border-yellow-500/50 rounded-xl p-4 transition-all duration-300 hover:scale-105">
-            <div className="flex flex-col items-center gap-3">
-              <img
-                src={JavaScriptIcon}
-                alt="JavaScript"
-                className="w-10 h-10"
-              />
-              <span className="text-sm font-semibold text-gray-200 group-hover:text-yellow-300 transition-colors duration-300">
-                JavaScript
-              </span>
+          {skills.map((skill) => (
+            <div
+              key={skill.id}
+              draggable
+              onDragStart={(e) => handleDragStart(e, skill.id)}
+              onDragOver={(e) => handleDragOver(e, skill.id)}
+              onDragLeave={handleDragLeave}
+              onDrop={(e) => handleDrop(e, skill.id)}
+              onDragEnd={handleDragEnd}
+              className={`group bg-gradient-to-br from-gray-800 to-gray-900 ${
+                skill.hoverColors.background
+              } border border-gray-700 ${
+                skill.hoverColors.border
+              } rounded-xl p-4 transition-all duration-300 hover:scale-105 cursor-grab active:cursor-grabbing select-none ${
+                draggedItem === skill.id ? "opacity-50 scale-95" : ""
+              } ${
+                dragOverItem === skill.id && draggedItem !== skill.id
+                  ? "ring-2 ring-blue-400 ring-opacity-50"
+                  : ""
+              }`}
+            >
+              <div className="flex flex-col items-center gap-3">
+                <img
+                  src={skill.icon}
+                  alt={skill.name}
+                  className="w-10 h-10 pointer-events-none"
+                />
+                <span
+                  className={`text-sm font-semibold text-gray-200 ${skill.hoverColors.text} transition-colors duration-300`}
+                >
+                  {skill.name}
+                </span>
+              </div>
             </div>
-          </div>
-          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 hover:from-blue-500/20 hover:to-blue-600/20 border border-gray-700 hover:border-blue-500/50 rounded-xl p-4 transition-all duration-300 hover:scale-105">
-            <div className="flex flex-col items-center gap-3">
-              <img
-                src={TypeScriptIcon}
-                alt="TypeScript"
-                className="w-10 h-10"
-              />
-              <span className="text-sm font-semibold text-gray-200 group-hover:text-blue-300 transition-colors duration-300">
-                TypeScript
-              </span>
-            </div>
-          </div>
-          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 hover:from-blue-500/20 hover:to-blue-600/20 border border-gray-700 hover:border-blue-500/50 rounded-xl p-4 transition-all duration-300 hover:scale-105">
-            <div className="flex flex-col items-center gap-3">
-              <img src={CIcon} alt="C" className="w-10 h-10" />
-              <span className="text-sm font-semibold text-gray-200 group-hover:text-blue-300 transition-colors duration-300">
-                C
-              </span>
-            </div>
-          </div>
-          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 hover:from-blue-500/20 hover:to-blue-600/20 border border-gray-700 hover:border-blue-500/50 rounded-xl p-4 transition-all duration-300 hover:scale-105">
-            <div className="flex flex-col items-center gap-3">
-              <img src={CppIcon} alt="C++" className="w-10 h-10" />
-              <span className="text-sm font-semibold text-gray-200 group-hover:text-blue-300 transition-colors duration-300">
-                C++
-              </span>
-            </div>
-          </div>
-          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 hover:from-yellow-500/20 hover:to-yellow-600/20 border border-gray-700 hover:border-yellow-500/50 rounded-xl p-4 transition-all duration-300 hover:scale-105">
-            <div className="flex flex-col items-center gap-3">
-              <img src={PythonIcon} alt="Python" className="w-10 h-10" />
-              <span className="text-sm font-semibold text-gray-200 group-hover:text-yellow-300 transition-colors duration-300">
-                Python
-              </span>
-            </div>
-          </div>
-          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 hover:from-orange-500/20 hover:to-orange-600/20 border border-gray-700 hover:border-orange-500/50 rounded-xl p-4 transition-all duration-300 hover:scale-105">
-            <div className="flex flex-col items-center gap-3">
-              <img src={JavaIcon} alt="Java" className="w-10 h-10" />
-              <span className="text-sm font-semibold text-gray-200 group-hover:text-orange-300 transition-colors duration-300">
-                Java
-              </span>
-            </div>
-          </div>
-          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 hover:from-cyan-500/20 hover:to-cyan-600/20 border border-gray-700 hover:border-cyan-500/50 rounded-xl p-4 transition-all duration-300 hover:scale-105">
-            <div className="flex flex-col items-center gap-3">
-              <img src={ReactIcon} alt="React" className="w-10 h-10" />
-              <span className="text-sm font-semibold text-gray-200 group-hover:text-cyan-300 transition-colors duration-300">
-                React
-              </span>
-            </div>
-          </div>
-          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 hover:from-green-500/20 hover:to-green-600/20 border border-gray-700 hover:border-green-500/50 rounded-xl p-4 transition-all duration-300 hover:scale-105">
-            <div className="flex flex-col items-center gap-3">
-              <img src={NodejsIcon} alt="Node.js" className="w-10 h-10" />
-              <span className="text-sm font-semibold text-gray-200 group-hover:text-green-300 transition-colors duration-300">
-                Node.js
-              </span>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
