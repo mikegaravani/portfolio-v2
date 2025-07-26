@@ -14,13 +14,10 @@ const Hero: React.FC = () => {
   };
   return (
     <section className="lg:fixed lg:w-2/5 lg:h-[calc(100vh-3rem)] lg:top-6 p-4 md:p-8 lg:p-12 flex flex-col lg:justify-start justify-center min-w-[300px] relative lg:overflow-y-auto">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 rounded-3xl lg:fixed lg:w-2/5 lg:h-[calc(100vh-3rem)] lg:top-6 lg:left-6"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl lg:fixed lg:w-2/5 lg:h-[calc(100vh-3rem)] lg:top-6 lg:left-6"></div>
 
       <div className="relative z-10 lg:my-auto lg:flex-shrink-0">
-        {/* Profile image with modern styling */}
         <div className="relative mb-8">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-lg opacity-20 scale-110"></div>
           <img
             src={pfp}
             alt="Profile"
@@ -28,7 +25,6 @@ const Hero: React.FC = () => {
           />
         </div>
 
-        {/* Name and title with enhanced typography */}
         <div className="mb-8">
           <h1 className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent mb-3 leading-tight">
             Mike Garavani
@@ -43,7 +39,6 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Social links with enhanced styling */}
         <div className="flex gap-4 mb-8 overflow-auto">
           {socials.map((social) => {
             let Icon = null;
@@ -56,22 +51,25 @@ const Hero: React.FC = () => {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative p-3 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20"
+                className="group relative p-3 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-200 hover:shadow-md hover:shadow-blue-500/10"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                {Icon && <Icon size={22} className="relative z-10" />}
+                {Icon && (
+                  <Icon
+                    size={22}
+                    className="relative z-10 group-hover:scale-110 transition-transform duration-200"
+                  />
+                )}
               </a>
             );
           })}
         </div>
 
-        {/* Action buttons with modern design */}
         <div className="flex flex-col sm:flex-row gap-4">
           <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 hover:scale-105 overflow-hidden"
+            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-lg transition-all duration-300 hover:scale-105 overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <FileText size={20} className="relative z-10" />

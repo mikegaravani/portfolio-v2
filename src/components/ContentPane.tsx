@@ -35,9 +35,7 @@ const ContentPane: React.FC = () => {
 
       {/* SKILLS SECTION */}
       <section>
-        <h2 className="text-2xl lg:text-3xl font-semibold mb-2">
-          Languages/Frameworks
-        </h2>
+        <h2 className="text-2xl lg:text-3xl font-semibold mb-2">Skills</h2>
 
         <div className="mb-8">
           <div className="flex flex-wrap mt-4 gap-6">
