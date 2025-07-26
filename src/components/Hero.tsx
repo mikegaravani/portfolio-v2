@@ -1,17 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { socials } from "../data/socials";
 import pfp from "../assets/pfp.png";
 import { FileText, Mail } from "lucide-react";
 import { SiGithub, SiX } from "@icons-pack/react-simple-icons";
 import { FaLinkedin } from "react-icons/fa";
-import PopupMenu from "./PopupMenu";
 
 const Hero: React.FC = () => {
-  const [resumePopupOpen, setResumePopupOpen] = useState(false);
-  const handleOpenResume = () => {
-    window.open("/resume.pdf", "_blank");
-    setResumePopupOpen(false);
-  };
   return (
     <section className="lg:fixed lg:w-2/5 lg:h-[calc(100vh-3rem)] lg:top-6 p-4 md:p-8 lg:p-12 flex flex-col lg:justify-start justify-center min-w-[300px] relative lg:overflow-y-auto">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl lg:fixed lg:w-2/5 lg:h-[calc(100vh-3rem)] lg:top-6 lg:left-6"></div>
@@ -84,30 +78,6 @@ const Hero: React.FC = () => {
           </a>
         </div>
       </div>
-      <PopupMenu
-        open={resumePopupOpen}
-        onClose={() => setResumePopupOpen(false)}
-      >
-        <div className="flex flex-col items-center gap-4">
-          <div className="text-lg font-medium text-center">
-            Would you like to view my professional resume?
-          </div>
-          <div className="flex gap-3 mt-2">
-            <button
-              onClick={handleOpenResume}
-              className="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors focus:outline-none"
-            >
-              Open Resume
-            </button>
-            <button
-              onClick={() => setResumePopupOpen(false)}
-              className="px-4 py-2 rounded-lg bg-gray-700 text-white font-semibold hover:bg-gray-800 transition-colors focus:outline-none"
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-      </PopupMenu>
     </section>
   );
 };
