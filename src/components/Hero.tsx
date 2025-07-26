@@ -13,11 +13,11 @@ const Hero: React.FC = () => {
     setResumePopupOpen(false);
   };
   return (
-    <section className="lg:fixed lg:w-2/5 lg:h-screen p-6 lg:p-12 lg:pl-[7%] flex flex-col justify-center min-w-[300px] max-w-[800px] relative">
+    <section className="lg:fixed lg:w-2/5 lg:h-[calc(100vh-3rem)] lg:top-6 p-4 md:p-8 lg:p-12 flex flex-col lg:justify-start justify-center min-w-[300px] relative lg:overflow-y-auto">
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 rounded-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 rounded-3xl lg:fixed lg:w-2/5 lg:h-[calc(100vh-3rem)] lg:top-6 lg:left-6"></div>
 
-      <div className="relative z-10">
+      <div className="relative z-10 lg:my-auto lg:flex-shrink-0">
         {/* Profile image with modern styling */}
         <div className="relative mb-8">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-lg opacity-20 scale-110"></div>
@@ -26,7 +26,6 @@ const Hero: React.FC = () => {
             alt="Profile"
             className="relative w-40 h-40 rounded-full object-cover border-4 border-white/10 shadow-2xl"
           />
-          <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-4 border-[#111111] animate-pulse"></div>
         </div>
 
         {/* Name and title with enhanced typography */}
@@ -35,13 +34,11 @@ const Hero: React.FC = () => {
             Mike Garavani
           </h1>
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600"></div>
             <p className="text-xl text-gray-300 font-medium">
               Software Engineer
             </p>
           </div>
           <div className="flex items-center gap-2 text-gray-400 mb-6">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
             <span className="text-base">🇨🇭 Lugano, Switzerland</span>
           </div>
         </div>
