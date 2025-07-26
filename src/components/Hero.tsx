@@ -13,19 +13,41 @@ const Hero: React.FC = () => {
     setResumePopupOpen(false);
   };
   return (
-    <section className="lg:fixed lg:w-2/5 lg:h-screen p-8 lg:p-12 lg:pl-[10%] flex flex-col min-w-[300px] max-w-[800px]">
-      <img
-        src={pfp}
-        alt="Profile"
-        className="w-32 h-32 rounded-full object-cover mb-4"
-      />
-      <div className="">
-        <h1 className="text-4xl font-bold mt-2 mb-1">Mike Garavani</h1>
-        <p className="text-lg text-gray-200 mb-2">Software Engineer</p>
-        <div className="text-base text-gray-500 mb-3">
-          🇨🇭 Lugano, Switzerland
+    <section className="lg:fixed lg:w-2/5 lg:h-screen p-6 lg:p-12 lg:pl-[7%] flex flex-col justify-center min-w-[300px] max-w-[800px] relative">
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 rounded-3xl"></div>
+
+      <div className="relative z-10">
+        {/* Profile image with modern styling */}
+        <div className="relative mb-8">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-lg opacity-20 scale-110"></div>
+          <img
+            src={pfp}
+            alt="Profile"
+            className="relative w-40 h-40 rounded-full object-cover border-4 border-white/10 shadow-2xl"
+          />
+          <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-4 border-[#111111] animate-pulse"></div>
         </div>
-        <div className="flex gap-4 overflow-auto">
+
+        {/* Name and title with enhanced typography */}
+        <div className="mb-8">
+          <h1 className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent mb-3 leading-tight">
+            Mike Garavani
+          </h1>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600"></div>
+            <p className="text-xl text-gray-300 font-medium">
+              Software Engineer
+            </p>
+          </div>
+          <div className="flex items-center gap-2 text-gray-400 mb-6">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-base">🇨🇭 Lugano, Switzerland</span>
+          </div>
+        </div>
+
+        {/* Social links with enhanced styling */}
+        <div className="flex gap-4 mb-8 overflow-auto">
           {socials.map((social) => {
             let Icon = null;
             if (social.icon === "Github") Icon = SiGithub;
@@ -37,29 +59,33 @@ const Hero: React.FC = () => {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-600 transition-colors"
+                className="group relative p-3 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20"
               >
-                {Icon && <Icon size={20} color="currentColor" />}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                {Icon && <Icon size={22} className="relative z-10" />}
               </a>
             );
           })}
         </div>
-        <div className="flex gap-3 mt-6">
+
+        {/* Action buttons with modern design */}
+        <div className="flex flex-col sm:flex-row gap-4">
           <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gray-600 text-white font-semibold shadow hover:bg-gray-700 transition-colors focus:outline-none"
+            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 hover:scale-105 overflow-hidden"
           >
-            <FileText size={20} className="-ml-1" />
-            Resume
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <FileText size={20} className="relative z-10" />
+            <span className="relative z-10">View Resume</span>
           </a>
           <a
             href=""
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gray-600 text-white font-semibold shadow hover:bg-gray-700 transition-colors focus:outline-none"
+            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl border-2 border-white/20 text-white font-semibold hover:bg-white/5 hover:border-white/30 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
           >
-            <Mail size={20} className="-ml-1" />
-            Get In Touch
+            <Mail size={20} />
+            <span>Get In Touch</span>
           </a>
         </div>
       </div>
