@@ -39,45 +39,79 @@ const ContentPane: React.FC = () => {
 
       {/* SKILLS SECTION */}
       <section className="mb-12">
-        <h2 className="text-3xl lg:text-4xl font-semibold mb-5">Skills</h2>
+        <h2 className="text-3xl lg:text-4xl font-semibold mb-8">Skills</h2>
 
-        <div className="mb-8">
-          <div className="flex flex-wrap mt-4 gap-6">
-            <div className="flex flex-col items-center gap-1 w-16">
-              <img src={JavaScriptIcon} alt="JavaScript" className="w-8 h-8" />
-              <span className="text-sm text-gray-400 text-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 hover:from-yellow-500/20 hover:to-yellow-600/20 border border-gray-700 hover:border-yellow-500/50 rounded-xl p-4 transition-all duration-300 hover:scale-105">
+            <div className="flex flex-col items-center gap-3">
+              <img
+                src={JavaScriptIcon}
+                alt="JavaScript"
+                className="w-10 h-10"
+              />
+              <span className="text-sm font-semibold text-gray-200 group-hover:text-yellow-300 transition-colors duration-300">
                 JavaScript
               </span>
             </div>
-            <div className="flex flex-col items-center gap-1 w-16">
-              <img src={TypeScriptIcon} alt="TypeScript" className="w-8 h-8" />
-              <span className="text-sm text-gray-400 text-center">
+          </div>
+          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 hover:from-blue-500/20 hover:to-blue-600/20 border border-gray-700 hover:border-blue-500/50 rounded-xl p-4 transition-all duration-300 hover:scale-105">
+            <div className="flex flex-col items-center gap-3">
+              <img
+                src={TypeScriptIcon}
+                alt="TypeScript"
+                className="w-10 h-10"
+              />
+              <span className="text-sm font-semibold text-gray-200 group-hover:text-blue-300 transition-colors duration-300">
                 TypeScript
               </span>
             </div>
-            <div className="flex flex-col items-center gap-1 w-16">
-              <img src={CIcon} alt="C" className="w-8 h-8" />
-              <span className="text-sm text-gray-400 text-center">C</span>
+          </div>
+          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 hover:from-blue-500/20 hover:to-blue-600/20 border border-gray-700 hover:border-blue-500/50 rounded-xl p-4 transition-all duration-300 hover:scale-105">
+            <div className="flex flex-col items-center gap-3">
+              <img src={CIcon} alt="C" className="w-10 h-10" />
+              <span className="text-sm font-semibold text-gray-200 group-hover:text-blue-300 transition-colors duration-300">
+                C
+              </span>
             </div>
-            <div className="flex flex-col items-center gap-1 w-16">
-              <img src={CppIcon} alt="C++" className="w-8 h-8" />
-              <span className="text-sm text-gray-400 text-center">C++</span>
+          </div>
+          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 hover:from-blue-500/20 hover:to-blue-600/20 border border-gray-700 hover:border-blue-500/50 rounded-xl p-4 transition-all duration-300 hover:scale-105">
+            <div className="flex flex-col items-center gap-3">
+              <img src={CppIcon} alt="C++" className="w-10 h-10" />
+              <span className="text-sm font-semibold text-gray-200 group-hover:text-blue-300 transition-colors duration-300">
+                C++
+              </span>
             </div>
-            <div className="flex flex-col items-center gap-1 w-16">
-              <img src={PythonIcon} alt="Python" className="w-8 h-8" />
-              <span className="text-sm text-gray-400 text-center">Python</span>
+          </div>
+          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 hover:from-yellow-500/20 hover:to-yellow-600/20 border border-gray-700 hover:border-yellow-500/50 rounded-xl p-4 transition-all duration-300 hover:scale-105">
+            <div className="flex flex-col items-center gap-3">
+              <img src={PythonIcon} alt="Python" className="w-10 h-10" />
+              <span className="text-sm font-semibold text-gray-200 group-hover:text-yellow-300 transition-colors duration-300">
+                Python
+              </span>
             </div>
-            <div className="flex flex-col items-center gap-1 w-16">
-              <img src={JavaIcon} alt="Java" className="w-8 h-8" />
-              <span className="text-sm text-gray-400 text-center">Java</span>
+          </div>
+          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 hover:from-orange-500/20 hover:to-orange-600/20 border border-gray-700 hover:border-orange-500/50 rounded-xl p-4 transition-all duration-300 hover:scale-105">
+            <div className="flex flex-col items-center gap-3">
+              <img src={JavaIcon} alt="Java" className="w-10 h-10" />
+              <span className="text-sm font-semibold text-gray-200 group-hover:text-orange-300 transition-colors duration-300">
+                Java
+              </span>
             </div>
-            <div className="flex flex-col items-center gap-1 w-16">
-              <img src={ReactIcon} alt="React" className="w-8 h-8" />
-              <span className="text-sm text-gray-400 text-center">React</span>
+          </div>
+          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 hover:from-cyan-500/20 hover:to-cyan-600/20 border border-gray-700 hover:border-cyan-500/50 rounded-xl p-4 transition-all duration-300 hover:scale-105">
+            <div className="flex flex-col items-center gap-3">
+              <img src={ReactIcon} alt="React" className="w-10 h-10" />
+              <span className="text-sm font-semibold text-gray-200 group-hover:text-cyan-300 transition-colors duration-300">
+                React
+              </span>
             </div>
-            <div className="flex flex-col items-center gap-1 w-16">
-              <img src={NodejsIcon} alt="Node.js" className="w-8 h-8" />
-              <span className="text-sm text-gray-400 text-center">Node.js</span>
+          </div>
+          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 hover:from-green-500/20 hover:to-green-600/20 border border-gray-700 hover:border-green-500/50 rounded-xl p-4 transition-all duration-300 hover:scale-105">
+            <div className="flex flex-col items-center gap-3">
+              <img src={NodejsIcon} alt="Node.js" className="w-10 h-10" />
+              <span className="text-sm font-semibold text-gray-200 group-hover:text-green-300 transition-colors duration-300">
+                Node.js
+              </span>
             </div>
           </div>
         </div>
@@ -275,7 +309,7 @@ const ContentPane: React.FC = () => {
                   href="https://github.com/mikegaravani/mCal"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg text-sm text-gray-200 transition-colors duration-200"
+                  className="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 hover:scale-105 px-4 py-2 rounded-lg text-sm text-gray-200 transition-all duration-300"
                 >
                   <svg
                     className="w-4 h-4"
@@ -290,10 +324,11 @@ const ContentPane: React.FC = () => {
                   href="https://site242535.tw.cs.unibo.it/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm text-white transition-colors duration-200"
+                  className="group relative flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:scale-105 px-4 py-2 rounded-lg text-sm text-white transition-all duration-300 shadow-lg overflow-hidden"
                 >
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <svg
-                    className="w-4 h-4"
+                    className="w-4 h-4 relative z-10"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -305,7 +340,7 @@ const ContentPane: React.FC = () => {
                       d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                     />
                   </svg>
-                  Live Demo
+                  <span className="relative z-10">Live Demo</span>
                 </a>
               </div>
             </div>
@@ -345,7 +380,7 @@ const ContentPane: React.FC = () => {
                   href="https://github.com/mikegaravani/connect-X-project"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg text-sm text-gray-200 transition-colors duration-200"
+                  className="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 hover:scale-105 px-4 py-2 rounded-lg text-sm text-gray-200 transition-all duration-300"
                 >
                   <svg
                     className="w-4 h-4"
@@ -400,7 +435,7 @@ const ContentPane: React.FC = () => {
                   href="https://github.com/mikegaravani/risk-odds"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg text-sm text-gray-200 transition-colors duration-200"
+                  className="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 hover:scale-105 px-4 py-2 rounded-lg text-sm text-gray-200 transition-all duration-300"
                 >
                   <svg
                     className="w-4 h-4"
