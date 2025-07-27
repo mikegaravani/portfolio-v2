@@ -82,7 +82,7 @@ const Hero: React.FC = () => {
           </a>
           <button
             onClick={handleContactClick}
-            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl border-2 border-white/20 text-white font-semibold hover:bg-white/5 hover:border-white/30 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl border-2 border-white/20 text-white font-semibold hover:bg-white/5 hover:border-white/30 transition-all duration-300 hover:scale-105 backdrop-blur-sm cursor-pointer"
           >
             <Mail size={20} />
             <span>Get In Touch</span>
