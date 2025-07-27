@@ -8,7 +8,7 @@ import { FaLinkedin } from "react-icons/fa";
 const Hero: React.FC = () => {
   return (
     <section className="lg:fixed lg:w-2/5 lg:h-[calc(100vh-3rem)] lg:top-6 p-4 md:p-8 lg:p-12 flex flex-col lg:justify-start justify-center min-w-[300px] relative lg:overflow-y-auto">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl lg:fixed lg:w-2/5 lg:h-[calc(100vh-3rem)] lg:top-6 lg:left-6"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-green-200/5 via-green-500/5 to-green-800/5 rounded-3xl lg:fixed lg:w-2/5 lg:h-[calc(100vh-3rem)] lg:top-6 lg:left-6"></div>
 
       <div className="relative z-10 lg:my-auto lg:flex-shrink-0">
         <div className="relative mb-8">
@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="mb-8">
-          <h1 className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent mb-3 leading-tight">
+          <h1 className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent mb-3 leading-tight">
             Mike Garavani
           </h1>
           <div className="flex items-center gap-3 mb-4">
@@ -63,9 +63,9 @@ const Hero: React.FC = () => {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-lg transition-all duration-300 hover:scale-105 overflow-hidden"
+            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold shadow-lg transition-all duration-300 hover:scale-105 overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-green-700 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <FileText size={20} className="relative z-10" />
             <span className="relative z-10">View Resume</span>
           </a>

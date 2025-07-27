@@ -423,9 +423,9 @@ const ContentPane: React.FC = () => {
                   href="https://site242535.tw.cs.unibo.it/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:scale-105 px-4 py-2 rounded-lg text-sm text-white transition-all duration-300 shadow-lg overflow-hidden"
+                  className="group relative flex items-center gap-2 bg-gradient-to-r from-green-700 to-blue-700 hover:scale-105 px-4 py-2 rounded-lg text-sm text-white transition-all duration-300 shadow-lg overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-700 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <svg
                     className="w-4 h-4 relative z-10"
                     fill="none"
