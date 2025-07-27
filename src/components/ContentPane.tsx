@@ -151,7 +151,7 @@ const ContentPane: React.FC = () => {
     setDragOverItem(null);
   };
   return (
-    <main className="lg:ml-[40%] w-full lg:w-3/5 lg:min-h-[90vh] min-w-[300px] mt-5 lg:mt-0 max-w-[1200px] mx-auto p-4 lg:p-12 lg:pt-4 lg:pr-[5%]">
+    <main className="lg:ml-[41%] w-full lg:w-3/5 lg:min-h-[90vh] min-w-[300px] mt-5 lg:mt-0 max-w-[1200px] mx-auto p-4 lg:p-12 lg:pt-4 lg:pr-[5%]">
       {/* ABOUT ME SECTION */}
       <section className="mb-12">
         <h2 className="text-3xl lg:text-4xl font-semibold mb-4">About Me</h2>
@@ -177,7 +177,7 @@ const ContentPane: React.FC = () => {
       <section className="mb-12">
         <h2 className="text-3xl lg:text-4xl font-semibold mb-8">Skills</h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           {skills.map((skill) => (
             <div
               key={skill.id}
@@ -191,7 +191,7 @@ const ContentPane: React.FC = () => {
                 skill.hoverColors.background
               } border border-gray-700 ${
                 skill.hoverColors.border
-              } rounded-xl p-4 transition-all duration-300 hover:scale-105 cursor-grab active:cursor-grabbing select-none ${
+              } rounded-xl p-3 transition-all duration-300 hover:scale-105 cursor-grab active:cursor-grabbing select-none ${
                 draggedItem === skill.id ? "opacity-50 scale-95" : ""
               } ${
                 dragOverItem === skill.id && draggedItem !== skill.id
@@ -199,14 +199,14 @@ const ContentPane: React.FC = () => {
                   : ""
               }`}
             >
-              <div className="flex flex-col items-center gap-3">
+              <div className="flex flex-col items-center gap-2.5">
                 <img
                   src={skill.icon}
                   alt={skill.name}
-                  className="w-10 h-10 pointer-events-none"
+                  className="w-8 h-8 pointer-events-none"
                 />
                 <span
-                  className={`text-sm font-semibold text-gray-200 ${skill.hoverColors.text} transition-colors duration-300`}
+                  className={`text-xs font-semibold text-gray-200 ${skill.hoverColors.text} transition-colors duration-300`}
                 >
                   {skill.name}
                 </span>
@@ -270,6 +270,7 @@ const ContentPane: React.FC = () => {
                   <span>• Probability and Statistics [27/30]</span>
                   <span>• Combinatorial Optimization [27/30]</span>
                   <span>• Web Development [28/30]</span>
+                  <span>• Computer Networks [30/30]</span>
                   <span>• Object Oriented Programming [25/30]</span>
                 </div>
               </div>
