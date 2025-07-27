@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { socials } from "../data/socials";
 import pfp from "../assets/pfp.png";
 import { FileText, Mail } from "lucide-react";
 import { SiGithub, SiX } from "@icons-pack/react-simple-icons";
 import { FaLinkedin } from "react-icons/fa";
+import ContactPopup from "./ContactPopup";
 
 const Hero: React.FC = () => {
+  const [isContactPopupOpen, setIsContactPopupOpen] = useState(false);
+
+  const handleContactClick = () => {
+    setIsContactPopupOpen(true);
+  };
+
+  const handleCloseContactPopup = () => {
+    setIsContactPopupOpen(false);
+  };
+
   return (
     <section className="lg:fixed lg:w-2/5 lg:h-[calc(100vh-3rem)] lg:top-6 p-4 md:p-8 lg:p-12 flex flex-col lg:justify-start justify-center min-w-[300px] relative lg:overflow-y-auto">
       <div className="absolute inset-0 bg-gradient-to-br from-green-200/5 via-green-500/5 to-green-800/5 rounded-3xl lg:fixed lg:w-2/5 lg:h-[calc(100vh-3rem)] lg:top-6 lg:left-6"></div>
@@ -69,15 +80,20 @@ const Hero: React.FC = () => {
             <FileText size={20} className="relative z-10" />
             <span className="relative z-10">View Resume</span>
           </a>
-          <a
-            href=""
+          <button
+            onClick={handleContactClick}
             className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl border-2 border-white/20 text-white font-semibold hover:bg-white/5 hover:border-white/30 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
           >
             <Mail size={20} />
             <span>Get In Touch</span>
-          </a>
+          </button>
         </div>
       </div>
+
+      <ContactPopup
+        isOpen={isContactPopupOpen}
+        onClose={handleCloseContactPopup}
+      />
     </section>
   );
 };
