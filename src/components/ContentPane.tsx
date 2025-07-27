@@ -203,7 +203,9 @@ const ContentPane: React.FC = () => {
                 <img
                   src={skill.icon}
                   alt={skill.name}
-                  className="w-8 h-8 pointer-events-none"
+                  className={`w-8 h-8 pointer-events-none ${
+                    skill.id === "nodejs" ? "bg-white rounded-full p-1" : ""
+                  }`}
                 />
                 <span
                   className={`text-xs font-semibold text-gray-200 ${skill.hoverColors.text} transition-colors duration-300`}

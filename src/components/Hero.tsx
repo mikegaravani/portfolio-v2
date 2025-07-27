@@ -70,23 +70,24 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4">
+          <button
+            onClick={handleContactClick}
+            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold shadow-lg transition-all duration-300 hover:scale-105 overflow-hidden cursor-pointer"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-green-700 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <Mail size={20} className="relative z-10" />
+            <span className="relative z-10">Get In Touch</span>
+          </button>
+
           <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold shadow-lg transition-all duration-300 hover:scale-105 overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-green-700 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <FileText size={20} className="relative z-10" />
-            <span className="relative z-10">View Resume</span>
-          </a>
-          <button
-            onClick={handleContactClick}
             className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl border-2 border-white/20 text-white font-semibold hover:bg-white/5 hover:border-white/30 transition-all duration-300 hover:scale-105 backdrop-blur-sm cursor-pointer"
           >
-            <Mail size={20} />
-            <span>Get In Touch</span>
-          </button>
+            <FileText size={20} />
+            <span>View Resume</span>
+          </a>
         </div>
       </div>
 
