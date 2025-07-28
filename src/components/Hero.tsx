@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { socials } from "../data/socials";
 import pfp from "../assets/pfp.png";
+import resume from "../assets/Michele_Garavani_Resume.pdf";
 import { FileText, Mail } from "lucide-react";
 import { SiGithub, SiX } from "@icons-pack/react-simple-icons";
 import { FaLinkedin } from "react-icons/fa";
@@ -80,7 +81,7 @@ const Hero: React.FC = () => {
           </button>
 
           <a
-            href="/resume.pdf"
+            href={resume}
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl border-2 border-white/20 text-white font-semibold hover:bg-white/5 hover:border-white/30 transition-all duration-300 hover:scale-105 backdrop-blur-sm cursor-pointer"
