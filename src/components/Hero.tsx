@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
 
   return (
     <section className="lg:fixed lg:w-2/5 lg:h-[calc(100vh-3rem)] lg:top-6 p-4 md:p-8 lg:p-12 flex flex-col lg:justify-start justify-center min-w-[300px] relative lg:overflow-y-auto">
-      <div className="absolute inset-0 bg-gradient-to-br from-green-200/5 via-green-500/5 to-green-800/5 rounded-3xl lg:fixed lg:w-2/5 lg:h-[calc(100vh-3rem)] lg:top-6 lg:left-6"></div>
+      <div className="absolute inset-1 md:inset-0 bg-gradient-to-br from-green-200/5 via-green-500/5 to-green-800/5 rounded-3xl lg:fixed lg:w-2/5 lg:h-[calc(100vh-3rem)] lg:top-6 lg:left-6"></div>
 
       <div className="relative z-10 lg:my-auto lg:flex-shrink-0">
         <div className="relative mb-8">
