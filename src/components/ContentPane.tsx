@@ -166,8 +166,8 @@ const ContentPane: React.FC = () => {
           think about architecture, data modeling, and clean, maintainable code.
         </p>
         <p className="text-base text-gray-300 leading-relaxed">
-          I try to keep things simple and understandable, for teammates and for
-          my future self. It is important for me to be dependable: communicating
+          I try to keep things simple and understandable, for me and for my
+          teammates. It is important for me to be dependable: communicating
           early and documenting choices. I enjoy teams that value curiosity,
           kindness, and steady improvement.
         </p>
@@ -240,7 +240,7 @@ const ContentPane: React.FC = () => {
                   University of Bologna, Italy
                 </p>
                 <p className="text-sm sm:text-base text-gray-400">
-                  September 2022 - October 2025 (expected)
+                  September 2022 - March 2026 (expected)
                 </p>
               </div>
             </div>
