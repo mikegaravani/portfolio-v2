@@ -6,5 +6,5 @@ export const socials = [
     url: "https://www.linkedin.com/in/michelegaravani/",
     icon: "Linkedin",
   },
-  { name: "Twitter", url: "https://x.com/garavanimike", icon: "Twitter" },
+  // { name: "Twitter", url: "https://x.com/garavanimike", icon: "Twitter" },
 ];

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { socials } from "../data/socials";
 import pfp from "../assets/pfp.png";
-import resume from "../assets/Michele_Garavani_Resume.pdf";
+import resume from "../assets/mg_resume_portfolio.pdf";
 import { FileText, Mail } from "lucide-react";
 import { SiGithub, SiX } from "@icons-pack/react-simple-icons";
 import { FaLinkedin } from "react-icons/fa";
