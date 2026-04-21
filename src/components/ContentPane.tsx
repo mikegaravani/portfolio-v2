@@ -157,24 +157,23 @@ const ContentPane: React.FC = () => {
         <h2 className="text-3xl lg:text-4xl font-semibold mb-4">About Me</h2>
 
         <p className="text-base text-gray-300 leading-relaxed mb-3">
-          I'm a Swiss computer science student currently finishing my Bachelor's
-          degree and excited to enter the job market.
+          I'm a Swiss computer science graduate, currently preparing to pursue a
+          Master's degree and looking to gain more hands-on experience through
+          internships.
         </p>
         <p className="text-base text-gray-300 leading-relaxed mb-3">
-          I like building things end to end: my latest project is a full-stack
-          web app, packed with small quality of life features that forced me to
-          think about architecture, data modeling, and clean, maintainable code.
+          Lately, I’ve been interested in working with data and exploring how it
+          can be used to better understand and solve problems. In a recent
+          project, I analyzed how commenting practices in Python open-source
+          projects have evolved by building a reproducible data pipeline.
         </p>
         <p className="text-base text-gray-300 leading-relaxed">
-          I try to keep things simple and understandable, for me and for my
-          teammates. It is important for me to be dependable: communicating
-          early and documenting choices. I enjoy teams that value curiosity,
-          kindness, and steady improvement.
+          I value simplicity and being someone others can rely on.
         </p>
       </section>
 
       {/* SKILLS SECTION */}
-      <section className="mb-12">
+      {/* <section className="mb-12">
         <h2 className="text-3xl lg:text-4xl font-semibold mb-8">Skills</h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -216,7 +215,7 @@ const ContentPane: React.FC = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* EDUCATION SECTION */}
       <section>
@@ -240,7 +239,7 @@ const ContentPane: React.FC = () => {
                   University of Bologna, Italy
                 </p>
                 <p className="text-sm sm:text-base text-gray-400">
-                  September 2022 - March 2026 (expected)
+                  September 2022 - March 2026
                 </p>
               </div>
             </div>
@@ -270,10 +269,9 @@ const ContentPane: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
                   <span>• Data Structures & Algorithms [30L/30]</span>
                   <span>• Probability and Statistics [27/30]</span>
-                  <span>• Combinatorial Optimization [27/30]</span>
                   <span>• Web Development [28/30]</span>
                   <span>• Computer Networks [30/30]</span>
-                  <span>• Object Oriented Programming [25/30]</span>
+                  <span>• Cybersecurity [29/30]</span>
                 </div>
               </div>
             </details>
@@ -497,7 +495,7 @@ const ContentPane: React.FC = () => {
             </div>
           </li>
 
-          {/* PROJECT 3 */}
+          {/* PROJECT 3
           <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-600">
             <div className="mb-4">
               <h3 className="text-xl sm:text-2xl font-semibold text-gray-100 mb-3">
@@ -550,7 +548,7 @@ const ContentPane: React.FC = () => {
                 </a>
               </div>
             </div>
-          </li>
+          </li> */}
         </ul>
       </section>
     </main>
