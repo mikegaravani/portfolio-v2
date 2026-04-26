@@ -10,6 +10,7 @@ import NodejsIcon from "../assets/icons/nodejs.svg";
 import UniboIcon from "../assets/icons/unibo.svg";
 import Lilu2Icon from "../assets/icons/lilu2.png";
 import PvmIcon from "../assets/icons/pvm.png";
+import ConstructorIcon from "../assets/icons/constructor_knowledge_labs_logo.jpg";
 import MongodbIcon from "../assets/icons/mongodb.svg"; // Assuming you have a MongoDB icon
 
 interface Skill {
@@ -217,6 +218,64 @@ const ContentPane: React.FC = () => {
         </div>
       </section> */}
 
+      {/* EXPERIENCE SECTION */}
+      <section className="mt-12 mb-12">
+        <h2 className="text-3xl lg:text-4xl font-semibold mb-5">Experience</h2>
+
+        <ul className="list-none space-y-8 pl-0">
+          {/* EXPERIENCE 1 */}
+          <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-600">
+            <div className="flex items-center mb-2">
+              <div className="bg-white rounded-full p-2 mr-4 w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0 flex items-center justify-center overflow-hidden">
+                <img
+                  src={ConstructorIcon}
+                  alt="Constructor Knowledge Labs Icon"
+                  className="w-full h-full"
+                />
+              </div>
+              <div className="flex-grow pt-1">
+                <h3 className="text-xl sm:text-2xl font-semibold text-gray-100">
+                  Constructor Knowledge Labs
+                </h3>
+                <p className="text-base sm:text-lg text-gray-300">
+                  Bremen, Germany
+                </p>
+                <p className="text-sm sm:text-base text-gray-400">
+                  September 2025 - December 2025
+                </p>
+              </div>
+            </div>
+
+            <div className="text-base text-gray-300 leading-relaxed mb-4 space-y-2">
+              <p>
+                • Developed a Python pipeline to automatically analyze and
+                classify scientific papers and repositories
+              </p>
+              <p>
+                • Created an intelligent tool able to automatically setup and
+                process input data, successfully parsing and structuring
+                hundreds of repositories
+              </p>
+              <p>
+                • Worked with Python AI-driven frameworks such as Langgraph and
+                Langchain, inside a containerized Docker environment.
+              </p>
+              <p>
+                • Collaborated closely with other developers and supervisors to
+                continuously deliver quality software
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3 mb-4">
+              <div className="flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-full text-sm">
+                <img src={PythonIcon} alt="React" className="w-4 h-4" />
+                Python
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
       {/* EDUCATION SECTION */}
       <section>
         <h2 className="text-3xl lg:text-4xl font-semibold mb-5">Education</h2>
@@ -355,6 +414,97 @@ const ContentPane: React.FC = () => {
         <h2 className="text-3xl lg:text-4xl font-semibold mb-5">Projects</h2>
 
         <ul className="list-none space-y-8 pl-0">
+          {/* PROJECT THESIS */}
+          <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-600">
+            <div className="mb-4">
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-100 mb-3">
+                mCal - Full Stack Productivity
+              </h3>
+              <div className="text-base text-gray-300 leading-relaxed mb-4 space-y-2">
+                <p>
+                  • Built a comprehensive task management application with
+                  advanced event scheduling
+                </p>
+                <p>
+                  • Implemented secure user authentication and admin features
+                </p>
+                <p>
+                  • Designed RESTful APIs with proper error handling and input
+                  validation
+                </p>
+                <p>
+                  • Created responsive UI components with smooth animations and
+                  transitions
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-3 mb-4">
+                <div className="flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-full text-sm">
+                  <img src={ReactIcon} alt="React" className="w-4 h-4" />
+                  React
+                </div>
+                <div className="flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-full text-sm">
+                  <img
+                    src={TypeScriptIcon}
+                    alt="TypeScript"
+                    className="w-4 h-4"
+                  />
+                  TypeScript
+                </div>
+                <div className="flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-full text-sm">
+                  <div className="bg-white rounded-full p-1 flex items-center justify-center">
+                    <img src={NodejsIcon} alt="Node.js" className="w-4 h-4" />
+                  </div>
+                  Node.js
+                </div>
+                <div className="flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-full text-sm">
+                  <img src={MongodbIcon} alt="Mongodb" className="w-4 h-4" />
+                  Mongodb
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <a
+                  href="https://github.com/mikegaravani/mCal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 hover:scale-105 px-4 py-2 rounded-lg text-sm text-gray-200 transition-all duration-300"
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg>
+                  View Code
+                </a>
+                <a
+                  href="https://site242535.tw.cs.unibo.it/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative flex items-center gap-2 bg-gradient-to-r from-green-700 to-blue-700 hover:scale-105 px-4 py-2 rounded-lg text-sm text-white transition-all duration-300 shadow-lg overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-700 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <svg
+                    className="w-4 h-4 relative z-10"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                  <span className="relative z-10">Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </li>
+
           {/* PROJECT 1 */}
           <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-600">
             <div className="mb-4">
