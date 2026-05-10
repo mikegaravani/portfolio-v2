@@ -1,8 +1,5 @@
-import React, { useState } from "react";
-import JavaScriptIcon from "../assets/icons/javascript.svg";
+import React from "react";
 import TypeScriptIcon from "../assets/icons/typescript.svg";
-import CIcon from "../assets/icons/c.svg";
-import CppIcon from "../assets/icons/cpp.svg";
 import JavaIcon from "../assets/icons/java.svg";
 import PythonIcon from "../assets/icons/python.svg";
 import ReactIcon from "../assets/icons/react.svg";
@@ -11,146 +8,10 @@ import UniboIcon from "../assets/icons/unibo.svg";
 import Lilu2Icon from "../assets/icons/lilu2.png";
 import PvmIcon from "../assets/icons/pvm.png";
 import ConstructorIcon from "../assets/icons/constructor_knowledge_labs_logo.jpg";
-import MongodbIcon from "../assets/icons/mongodb.svg"; // Assuming you have a MongoDB icon
-
-interface Skill {
-  id: string;
-  name: string;
-  icon: string;
-  hoverColors: {
-    background: string;
-    border: string;
-    text: string;
-  };
-}
+import MongodbIcon from "../assets/icons/mongodb.svg";
+import ThesisPdf from "../assets/thesis.pdf";
 
 const ContentPane: React.FC = () => {
-  const [skills, setSkills] = useState<Skill[]>([
-    {
-      id: "javascript",
-      name: "JavaScript",
-      icon: JavaScriptIcon,
-      hoverColors: {
-        background: "hover:from-yellow-500/20 hover:to-yellow-600/20",
-        border: "hover:border-yellow-500/50",
-        text: "group-hover:text-yellow-300",
-      },
-    },
-    {
-      id: "typescript",
-      name: "TypeScript",
-      icon: TypeScriptIcon,
-      hoverColors: {
-        background: "hover:from-blue-500/20 hover:to-blue-600/20",
-        border: "hover:border-blue-500/50",
-        text: "group-hover:text-blue-300",
-      },
-    },
-    {
-      id: "c",
-      name: "C",
-      icon: CIcon,
-      hoverColors: {
-        background: "hover:from-blue-500/20 hover:to-blue-600/20",
-        border: "hover:border-blue-500/50",
-        text: "group-hover:text-blue-300",
-      },
-    },
-    {
-      id: "cpp",
-      name: "C++",
-      icon: CppIcon,
-      hoverColors: {
-        background: "hover:from-blue-500/20 hover:to-blue-600/20",
-        border: "hover:border-blue-500/50",
-        text: "group-hover:text-blue-300",
-      },
-    },
-    {
-      id: "python",
-      name: "Python",
-      icon: PythonIcon,
-      hoverColors: {
-        background: "hover:from-yellow-500/20 hover:to-yellow-600/20",
-        border: "hover:border-yellow-500/50",
-        text: "group-hover:text-yellow-300",
-      },
-    },
-    {
-      id: "java",
-      name: "Java",
-      icon: JavaIcon,
-      hoverColors: {
-        background: "hover:from-orange-500/20 hover:to-orange-600/20",
-        border: "hover:border-orange-500/50",
-        text: "group-hover:text-orange-300",
-      },
-    },
-    {
-      id: "react",
-      name: "React",
-      icon: ReactIcon,
-      hoverColors: {
-        background: "hover:from-cyan-500/20 hover:to-cyan-600/20",
-        border: "hover:border-cyan-500/50",
-        text: "group-hover:text-cyan-300",
-      },
-    },
-    {
-      id: "nodejs",
-      name: "Node.js",
-      icon: NodejsIcon,
-      hoverColors: {
-        background: "hover:from-green-500/20 hover:to-green-600/20",
-        border: "hover:border-green-500/50",
-        text: "group-hover:text-green-300",
-      },
-    },
-  ]);
-
-  const [draggedItem, setDraggedItem] = useState<string | null>(null);
-  const [dragOverItem, setDragOverItem] = useState<string | null>(null);
-
-  const handleDragStart = (e: React.DragEvent, skillId: string) => {
-    setDraggedItem(skillId);
-    e.dataTransfer.effectAllowed = "move";
-  };
-
-  const handleDragOver = (e: React.DragEvent, skillId: string) => {
-    e.preventDefault();
-    e.dataTransfer.dropEffect = "move";
-    setDragOverItem(skillId);
-  };
-
-  const handleDragLeave = () => {
-    setDragOverItem(null);
-  };
-
-  const handleDrop = (e: React.DragEvent, dropTargetId: string) => {
-    e.preventDefault();
-
-    if (!draggedItem || draggedItem === dropTargetId) {
-      setDraggedItem(null);
-      setDragOverItem(null);
-      return;
-    }
-
-    const draggedIndex = skills.findIndex((skill) => skill.id === draggedItem);
-    const targetIndex = skills.findIndex((skill) => skill.id === dropTargetId);
-
-    const newSkills = [...skills];
-    const [draggedSkill] = newSkills.splice(draggedIndex, 1);
-    newSkills.splice(targetIndex, 0, draggedSkill);
-
-    setSkills(newSkills);
-    setDraggedItem(null);
-    setDragOverItem(null);
-  };
-
-  const handleDragEnd = () => {
-    setDraggedItem(null);
-    setDragOverItem(null);
-  };
   return (
     <main className="lg:ml-[41%] w-full lg:w-3/5 lg:min-h-[90vh] min-w-[300px] mt-5 lg:mt-0 max-w-[1200px] mx-auto p-4 lg:p-12 lg:pt-4 lg:pr-[5%]">
       {/* ABOUT ME SECTION */}
@@ -168,55 +29,10 @@ const ContentPane: React.FC = () => {
           project, I analyzed how commenting practices in Python open-source
           projects have evolved by building a reproducible data pipeline.
         </p>
-        <p className="text-base text-gray-300 leading-relaxed">
+        {/* <p className="text-base text-gray-300 leading-relaxed">
           I value simplicity and being someone others can rely on.
-        </p>
+        </p> */}
       </section>
-
-      {/* SKILLS SECTION */}
-      {/* <section className="mb-12">
-        <h2 className="text-3xl lg:text-4xl font-semibold mb-8">Skills</h2>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-          {skills.map((skill) => (
-            <div
-              key={skill.id}
-              draggable
-              onDragStart={(e) => handleDragStart(e, skill.id)}
-              onDragOver={(e) => handleDragOver(e, skill.id)}
-              onDragLeave={handleDragLeave}
-              onDrop={(e) => handleDrop(e, skill.id)}
-              onDragEnd={handleDragEnd}
-              className={`group bg-gradient-to-br from-gray-800 to-gray-900 ${
-                skill.hoverColors.background
-              } border border-gray-700 ${
-                skill.hoverColors.border
-              } rounded-xl p-3 transition-all duration-300 hover:scale-105 cursor-grab active:cursor-grabbing select-none ${
-                draggedItem === skill.id ? "opacity-50 scale-95" : ""
-              } ${
-                dragOverItem === skill.id && draggedItem !== skill.id
-                  ? "ring-2 ring-blue-400 ring-opacity-50"
-                  : ""
-              }`}
-            >
-              <div className="flex flex-col items-center gap-2.5">
-                <img
-                  src={skill.icon}
-                  alt={skill.name}
-                  className={`w-8 h-8 pointer-events-none ${
-                    skill.id === "nodejs" ? "bg-white rounded-full p-1" : ""
-                  }`}
-                />
-                <span
-                  className={`text-xs font-semibold text-gray-200 ${skill.hoverColors.text} transition-colors duration-300`}
-                >
-                  {skill.name}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section> */}
 
       {/* EXPERIENCE SECTION */}
       <section className="mt-12 mb-12">
@@ -249,12 +65,12 @@ const ContentPane: React.FC = () => {
             <div className="text-base text-gray-300 leading-relaxed mb-4 space-y-2">
               <p>
                 • Developed a Python pipeline to automatically analyze and
-                classify scientific papers and repositories
+                classify scientific papers
               </p>
               <p>
                 • Created an intelligent tool able to automatically setup and
                 process input data, successfully parsing and structuring
-                hundreds of repositories
+                hundreds of scientific code repositories
               </p>
               <p>
                 • Worked with Python AI-driven frameworks such as Langgraph and
@@ -418,54 +234,25 @@ const ContentPane: React.FC = () => {
           <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-600">
             <div className="mb-4">
               <h3 className="text-xl sm:text-2xl font-semibold text-gray-100 mb-3">
-                mCal - Full Stack Productivity
+                Python Comment Evolution
               </h3>
               <div className="text-base text-gray-300 leading-relaxed mb-4 space-y-2">
-                <p>
-                  • Built a comprehensive task management application with
-                  advanced event scheduling
-                </p>
-                <p>
-                  • Implemented secure user authentication and admin features
-                </p>
-                <p>
-                  • Designed RESTful APIs with proper error handling and input
-                  validation
-                </p>
-                <p>
-                  • Created responsive UI components with smooth animations and
-                  transitions
-                </p>
+                <p>• Created</p>
+                <p>• Lol</p>
+                <p>• kskks</p>
+                <p>• Caaaa</p>
               </div>
 
               <div className="flex flex-wrap gap-3 mb-4">
                 <div className="flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-full text-sm">
-                  <img src={ReactIcon} alt="React" className="w-4 h-4" />
-                  React
-                </div>
-                <div className="flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-full text-sm">
-                  <img
-                    src={TypeScriptIcon}
-                    alt="TypeScript"
-                    className="w-4 h-4"
-                  />
-                  TypeScript
-                </div>
-                <div className="flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-full text-sm">
-                  <div className="bg-white rounded-full p-1 flex items-center justify-center">
-                    <img src={NodejsIcon} alt="Node.js" className="w-4 h-4" />
-                  </div>
-                  Node.js
-                </div>
-                <div className="flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-full text-sm">
-                  <img src={MongodbIcon} alt="Mongodb" className="w-4 h-4" />
-                  Mongodb
+                  <img src={PythonIcon} alt="React" className="w-4 h-4" />
+                  Python
                 </div>
               </div>
 
               <div className="flex gap-4">
                 <a
-                  href="https://github.com/mikegaravani/mCal"
+                  href="https://github.com/mikegaravani/py-comment-evolution"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 hover:scale-105 px-4 py-2 rounded-lg text-sm text-gray-200 transition-all duration-300"
@@ -480,14 +267,13 @@ const ContentPane: React.FC = () => {
                   View Code
                 </a>
                 <a
-                  href="https://site242535.tw.cs.unibo.it/"
+                  href={ThesisPdf}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative flex items-center gap-2 bg-gradient-to-r from-green-700 to-blue-700 hover:scale-105 px-4 py-2 rounded-lg text-sm text-white transition-all duration-300 shadow-lg overflow-hidden"
+                  className="flex items-center gap-2  bg-yellow-500/30 hover:bg-yellow-500/50  hover:scale-105 px-4 py-2 rounded-lg text-sm text-yellow-200 hover:text-yellow-100 transition-all duration-300"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-700 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <svg
-                    className="w-4 h-4 relative z-10"
+                    className="w-4 h-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -496,10 +282,16 @@ const ContentPane: React.FC = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      d="M7 3h7l5 5v13a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 3v5h5M9 14h6M9 18h6M9 10h2"
                     />
                   </svg>
-                  <span className="relative z-10">Live Demo</span>
+                  <span>Read Thesis</span>
                 </a>
               </div>
             </div>
